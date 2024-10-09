@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	// Step 1: Use the flag package to parse command line arguments
+	// Use the flag package to parse command line arguments
 	serverAddr := flag.String("server", "localhost:8080", "Address of the server to connect to")
 	flag.Parse()
 
@@ -22,7 +22,7 @@ func main() {
 	}
 	defer conn.Close()
 
-	// Step 3: Get username and password input from the user
+	// Get username and password input from the user
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Print("Enter Username: ")
@@ -33,7 +33,7 @@ func main() {
 	password, _ := reader.ReadString('\n')
 	password = strings.TrimSpace(password)
 
-	// Step 4: Send the username and password to the server
+	// Send the username and password to the server
 	conn.Write([]byte(username + "\n"))
 	conn.Write([]byte(password + "\n"))
 
@@ -41,6 +41,6 @@ func main() {
 	serverReader := bufio.NewReader(conn)
 	response, _ := serverReader.ReadString('\n')
 
-	// Step 6: Print the server's response (success or failure)
+	// Print the server's response (success or failure)
 	fmt.Println("Server response:", strings.TrimSpace(response))
 }
