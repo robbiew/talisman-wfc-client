@@ -11,7 +11,7 @@ This client application connects to the Talisman BBS WFC Server, handles user au
 ## Requirements
 
 - Go 1.16 or higher
-- A running instance of the Talisman BBS WFC Server
+- A running instance of the Talisman BBS WFC Server [GitHub link](https://github.com/robbiew/talisman-wfc-server)
 
 ## Compilation
 
@@ -70,3 +70,6 @@ If authentication fails, the client will display an error message returned by th
 
 This project is licensed under the MIT License.
 
+
+
+[def]: http://
